@@ -1,4 +1,4 @@
-#阿里云DDNS动态域名服务
+# 阿里云DDNS动态域名服务
 
 - starter形式，使用者无需编码，启动springboot直接可用。简单方便。
 - 使用https://jsonip.com/获取本地IP
@@ -18,7 +18,7 @@
         </dependency>
 ```
 
-##使用方法
+## 使用方法
 1. 下载本项目，直接打包 mvn install 到本地仓库
 2. 创建你自己的springboot应用
 3. 在maven中增加
@@ -46,3 +46,7 @@ jnas:
     #刷新时长
     interval-seconds: 600
 ```
+
+## 联系作者
+- EMAIL: andy_jee@sina.com
+- QQ: 64959824
