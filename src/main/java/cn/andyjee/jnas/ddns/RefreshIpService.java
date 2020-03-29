@@ -53,7 +53,7 @@ public class RefreshIpService implements Runnable {
         DescribeDomainRecordsResponse.Record record = domainRecords.get(0);
         String recordId = record.getRecordId();
         String recordsValue = record.getValue();
-        String currentHostIp = IpUtil.getCurrentHostIP();
+        String currentHostIp = IpUtil.getCurrentIpByNetCn();
 
         if (!currentHostIp.equals(recordsValue)) {
 

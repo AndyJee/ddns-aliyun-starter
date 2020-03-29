@@ -1,5 +1,7 @@
 package cn.andyjee.jnas.ddns.util;
 
+import cn.hutool.http.HttpUtil;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -15,7 +17,7 @@ public class IpUtil {
     /**
      * 获取当前主机公网IP
      */
-    public static String getCurrentHostIP() {
+    public static String getCurrentIpByJsonipCom() {
         // 这里使用jsonip.com第三方接口获取本地IP
         String jsonip = "https://jsonip.com/";
         // 接口返回结果
@@ -58,4 +60,17 @@ public class IpUtil {
         }
         return res;
     }
+
+    /**
+     * 获取当前主机公网IP
+     */
+    public static String getCurrentIpByNetCn() {
+        String html = HttpUtil.get("http://www.net.cn/static/customercare/yourip.asp");
+        int start = html.indexOf("您的本地上网IP是：<h2>");
+        html = html.substring(start + 14);
+        int stop = html.indexOf("</h2>");
+        html = html.substring(0, stop);
+        return html;
+    }
+
 }
